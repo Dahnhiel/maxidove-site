@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Contact Us | Maxidove</title>
+    <meta
+      name="description"
+      content="Get in touch with Maxidove. We're here to answer your questions and provide the solutions you need."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/favicon.png"
+    />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Custom Contact Page CSS -->
+    <style>
+      .contact-section {
+        padding: 100px 0;
+      }
+      .contact-item {
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+        background-color: #fff;
+      }
+      .contact-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      .contact-icon {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(45deg, #3763eb, #6f42c1);
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+      .contact-icon i {
+        font-size: 30px;
+        color: #fff;
+      }
+      .contact-content h4 {
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+      .contact-form-wrapper {
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+        background-color: #fff;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        padding: 15px 20px;
+        border: 1px solid #e8e8e8;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: #3763eb;
+        box-shadow: 0 0 10px rgba(55, 99, 235, 0.1);
+      }
+      .theme-btn {
+        padding: 15px 30px;
+        border-radius: 30px;
+        background: linear-gradient(45deg, #3763eb, #6f42c1);
+        color: #fff;
+        font-weight: 600;
+        border: none;
+        transition: all 0.3s ease;
+      }
+      .theme-btn:hover {
+        background: linear-gradient(45deg, #6f42c1, #3763eb);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(55, 99, 235, 0.2);
+      }
+      .map-section {
+        padding: 80px 0;
+      }
+      .map-container {
+        height: 450px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+      }
+      .page-banner-section {
+        position: relative;
+        padding: 120px 0;
+        background-size: cover;
+        background-position: center;
+      }
+      .page-banner-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          rgba(55, 99, 235, 0.8),
+          rgba(111, 66, 193, 0.8)
+        );
+      }
+      .banner-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+      }
+      .banner-content h2 {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      .breadcrumb {
+        justify-content: center;
+      }
+      .breadcrumb-item a {
+        color: #fff;
+        opacity: 0.8;
+      }
+      .breadcrumb-item.active {
+        color: #fff;
+      }
+      .breadcrumb-item + .breadcrumb-item::before {
+        color: #fff;
+      }
+      .contact-info-icon {
+        margin-right: 10px;
+        color: #3763eb;
+      }
+      .faq-section {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+      }
+      .accordion-item {
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      }
+      .accordion-button {
+        padding: 20px;
+        font-weight: 600;
+        background-color: #fff;
+      }
+      .accordion-button:not(.collapsed) {
+        color: #3763eb;
+        background-color: #f8f9ff;
+      }
+      .accordion-body {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+      <div class="loader">
+        <div class="ytp-spinner">
+          <div class="ytp-spinner-container">
+            <div class="ytp-spinner-rotator">
+              <div class="ytp-spinner-left">
+                <div class="ytp-spinner-circle"></div>
+              </div>
+              <div class="ytp-spinner-right">
+                <div class="ytp-spinner-circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- preloader end -->
+
+    <!-- ========================= header start ========================= -->
+    <header class="header navbar-area">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand" href="index.html">
+                <img src="assets/img/logo/maxi-logo.png" alt="MaxiDove Logo" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul id="nav" class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a href="index.html" class="active">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="index.html#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="index.html#service">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="portfolio.html">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="index.html#contact">Contact</a>
+                  </li>
+                </ul>
+                <div class="search-box">
+                  <form action="#" class="search-form">
+                    <input type="text" placeholder="Search" />
+                    <button type="submit">
+                      <i class="lni lni-search-alt"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <!-- navbar collapse -->
+            </nav>
+            <!-- navbar -->
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </header>
+    <!-- ========================= header end ========================= -->
+
+    <!-- ========================= page-banner-section start ========================= -->
+    <section
+      class="page-banner-section pt-75 pb-75 img-bg"
+      style="background-image: url('assets/img/bg/common-bg.svg')"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="banner-content">
+              <h2 class="text-white wow fadeInDown" data-wow-delay=".2s">
+                Get In Touch
+              </h2>
+              <div class="page-breadcrumb">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item" aria-current="page">
+                      <a href="index.html">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Contact
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= page-banner-section end ========================= -->
+
+    <!-- ========================= contact-section start ========================= -->
+    <section class="contact-section pt-100 pb-50">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-10 col-lg-11 mx-auto">
+            <div class="section-title text-center mb-60">
+              <span class="wow fadeInDown" data-wow-delay=".2s"
+                >Contact Us</span
+              >
+              <h2 class="wow fadeInUp" data-wow-delay=".4s">
+                We'd Love To Hear From You
+              </h2>
+              <p class="wow fadeInUp" data-wow-delay=".6s">
+                Have questions, suggestions, or ready to start a project? Feel
+                free to reach out to our team using any of the methods below.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-4">
+            <div class="contact-item-wrapper">
+              <div class="row">
+                <div class="col-12 col-md-6 col-xl-12">
+                  <div class="contact-item wow fadeInUp" data-wow-delay=".2s">
+                    <div class="contact-icon">
+                      <i class="lni lni-phone"></i>
+                    </div>
+                    <div class="contact-content">
+                      <h4>Contact Details</h4>
+                      <p>
+                        <i class="lni lni-phone-set contact-info-icon"></i>
+                        (123) 456-7890
+                      </p>
+                      <p>
+                        <i class="lni lni-envelope contact-info-icon"></i>
+                        contact@maxidove.com
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-12">
+                  <div class="contact-item wow fadeInUp" data-wow-delay=".4s">
+                    <div class="contact-icon">
+                      <i class="lni lni-map-marker"></i>
+                    </div>
+                    <div class="contact-content">
+                      <h4>Our Location</h4>
+                      <p>
+                        <i class="lni lni-map contact-info-icon"></i> 123
+                        Business Avenue, Suite 500<br />San Francisco, CA 94107
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-12">
+                  <div class="contact-item wow fadeInUp" data-wow-delay=".6s">
+                    <div class="contact-icon">
+                      <i class="lni lni-alarm-clock"></i>
+                    </div>
+                    <div class="contact-content">
+                      <h4>Working Hours</h4>
+                      <p>
+                        <i class="lni lni-timer contact-info-icon"></i> Monday -
+                        Friday: 9:00 AM - 6:00 PM
+                      </p>
+                      <p>
+                        <i class="lni lni-calendar contact-info-icon"></i> 24/7
+                        Support Available
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-8">
+            <div
+              class="contact-form-wrapper wow fadeInRight"
+              data-wow-delay=".4s"
+            >
+              <div class="row">
+                <div class="col-xl-10 col-lg-8 mx-auto">
+                  <div class="section-title text-center mb-50">
+                    <span>Send a Message</span>
+                    <h2>Let's Start a Conversation</h2>
+                  </div>
+                </div>
+              </div>
+              <form
+                action="assets/php/mail.php"
+                class="contact-form"
+                id="contact-form"
+              >
+                <div class="row">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      name="phone"
+                      id="phone"
+                      placeholder="Phone Number"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      name="subject"
+                      id="subject"
+                      placeholder="Subject"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <textarea
+                      name="message"
+                      id="message"
+                      placeholder="Your Message"
+                      rows="6"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="button text-center">
+                      <button type="submit" class="theme-btn">
+                        Send Message
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-response mt-3 text-center"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= contact-section end ========================= -->
+
+    <!-- ========================= map-section start ========================= -->
+    <section class="map-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="map-container wow fadeInUp" data-wow-delay=".2s">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5762653779166!2d-122.39901518434323!3d37.78098677975813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807eda84adfd%3A0x6cf494a53f8d080!2sSan%20Francisco%2C%20CA%2094107!5e0!3m2!1sen!2sus!4v1619047741099!5m2!1sen!2sus"
+                width="100%"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= map-section end ========================= -->
+
+    <!-- ========================= faq-section start ========================= -->
+    <section class="faq-section pb-100">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-8 col-lg-10">
+            <div class="section-title text-center mb-50">
+              <span class="wow fadeInDown" data-wow-delay=".2s">FAQ</span>
+              <h2 class="wow fadeInUp" data-wow-delay=".4s">
+                Frequently Asked Questions
+              </h2>
+              <p class="wow fadeInUp" data-wow-delay=".6s">
+                Find answers to common questions about our services and
+                processes
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="accordion" id="accordionFAQ">
+              <div class="accordion-item wow fadeInUp" data-wow-delay=".2s">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    What services does Maxidove offer?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#accordionFAQ"
+                >
+                  <div class="accordion-body">
+                    Maxidove offers a comprehensive range of services including
+                    web design and development, digital marketing strategies,
+                    branding solutions, mobile app development, and SEO
+                    optimization. Our team of experts works closely with each
+                    client to deliver customized solutions that meet their
+                    specific business needs.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item wow fadeInUp" data-wow-delay=".3s">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    How long does it take to complete a typical project?
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionFAQ"
+                >
+                  <div class="accordion-body">
+                    Project timelines vary depending on the scope and complexity
+                    of the work. A simple website may take 2-4 weeks, while more
+                    complex projects might require 2-3 months. During our
+                    initial consultation, we'll provide you with a detailed
+                    timeline based on your specific requirements.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item wow fadeInUp" data-wow-delay=".4s">
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    What is your pricing structure?
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#accordionFAQ"
+                >
+                  <div class="accordion-body">
+                    Our pricing is project-based and depends on the scope,
+                    complexity, and timeline of your needs. We offer transparent
+                    pricing with no hidden fees. Contact us for a free
+                    consultation and quote tailored to your specific project
+                    requirements.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item wow fadeInUp" data-wow-delay=".5s">
+                <h2 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    Do you offer support after project completion?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#accordionFAQ"
+                >
+                  <div class="accordion-body">
+                    Yes, we provide ongoing support and maintenance services for
+                    all our projects. We offer various support packages to
+                    ensure your website or application continues to run
+                    smoothly. Our team is always available to address any issues
+                    or implement updates as needed.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= faq-section end ========================= -->
+
+    <!-- ========================= subscribe-section start ========================= -->
+    <section
+      class="subscribe-section pt-70 pb-70 img-bg"
+      style="background-image: url('assets/img/bg/common-bg.svg')"
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-6 col-lg-6">
+            <div class="section-title mb-30">
+              <span class="text-white wow fadeInDown" data-wow-delay=".2s"
+                >Stay Updated</span
+              >
+              <h2 class="text-white mb-40 wow fadeInUp" data-wow-delay=".4s">
+                Subscribe To Our Newsletter
+              </h2>
+              <p class="text-white wow fadeInUp" data-wow-delay=".6s">
+                Get the latest news, updates, and insights delivered directly to
+                your inbox.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6">
+            <form
+              action="#"
+              class="subscribe-form wow fadeInRight"
+              data-wow-delay=".4s"
+            >
+              <input
+                type="email"
+                name="subs-email"
+                id="subs-email"
+                placeholder="Your Email Address"
+                required
+              />
+              <button type="submit" class="sub-btn">
+                <i class="lni lni-telegram-original"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= subscribe-section end ========================= -->
+
+    <!-- ========================= footer start ========================= -->
+    <footer class="footer pt-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div
+              class="footer-widget mb-60 wow fadeInLeft"
+              data-wow-delay=".2s"
+            >
+              <a href="index.html" class="logo mb-30"
+                ><img
+                  src="assets/img/logo/maxi-logo.png"
+                  alt="logo"
+                  class="footer-logo"
+              /></a>
+              <p class="mb-30 footer-desc">
+                MaxiDove helps businesses grow through strategic digital
+                marketing solutions. We're passionate about creating measurable
+                results that impact your bottom line.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6">
+            <div class="footer-widget mb-60 wow fadeInUp" data-wow-delay=".4s">
+              <h4>Quick Links</h4>
+              <ul class="footer-links">
+                <li>
+                  <a href="index.html">Home</a>
+                </li>
+                <li>
+                  <a href="index.html#about">About Us</a>
+                </li>
+                <li>
+                  <a href="index.html#service">Services</a>
+                </li>
+                <li>
+                  <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li>
+                  <a href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="footer-widget mb-60 wow fadeInUp" data-wow-delay=".6s">
+              <h4>Services</h4>
+              <ul class="footer-links">
+                <li>
+                  <a href="#0">Web Design</a>
+                </li>
+                <li>
+                  <a href="#0">Digital Marketing</a>
+                </li>
+                <li>
+                  <a href="#0">App Development</a>
+                </li>
+                <li>
+                  <a href="#0">Brand Strategy</a>
+                </li>
+                <li>
+                  <a href="#0">SEO Optimization</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div
+              class="footer-widget mb-60 wow fadeInRight"
+              data-wow-delay=".8s"
+            >
+              <h4>Contact Us</h4>
+              <ul class="footer-contact">
+                <li>
+                  <p>
+                    <i class="lni lni-phone contact-info-icon"></i> (123)
+                    456-7890
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <i class="lni lni-envelope contact-info-icon"></i>
+                    contact@maxidove.com
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <i class="lni lni-map contact-info-icon"></i> 123 Business
+                    Avenue, Suite 500<br />San Francisco, CA 94107
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright-area">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="footer-social-links">
+                <ul class="d-flex">
+                  <li>
+                    <a href="javascript:void(0)"
+                      ><i class="lni lni-facebook-filled"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"
+                      ><i class="lni lni-twitter-filled"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"
+                      ><i class="lni lni-linkedin-original"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"
+                      ><i class="lni lni-instagram-filled"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p class="wow fadeInUp" data-wow-delay=".3s">
+                &copy; 2025 Maxidove. All Rights Reserved. Designed by DevDan
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top">
+      <i class="lni lni-arrow-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap.bundle-5.0.0-beta1.min.js"></script>
+    <script src="assets/js/contact-form.js"></script>
+    <script src="assets/js/count-up.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/imagesloaded.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Contact form validation script -->
+    <script>
+      // Form validation and submission
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const subject = document.getElementById("subject").value;
+          const message = document.getElementById("message").value;
+          const formResponse = document.querySelector(".form-response");
+
+          // Simple validation
+          if (!name || !email || !phone || !subject || !message) {
+            formResponse.innerHTML =
+              '<div class="alert alert-danger">Please fill in all fields</div>';
+            return;
+          }
+
+          // Email validation
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            formResponse.innerHTML =
+              '<div class="alert alert-danger">Please enter a valid email address</div>';
+            return;
+          }
+
+          // Phone validation
+          const phoneRegex = /^\d{10,}$/;
+          if (!phoneRegex.test(phone.replace(/[^0-9]/g, ""))) {
+            formResponse.innerHTML =
+              '<div class="alert alert-danger">Please enter a valid phone number</div>';
+            return;
+          }
+
+          // Show loading message
+          formResponse.innerHTML =
+            '<div class="alert alert-info">Sending your message...</div>';
+
+          // Simulate form submission (replace with actual AJAX call to your form handler)
+          setTimeout(function () {
+            formResponse.innerHTML =
+              '<div class="alert alert-success">Your message has been sent successfully! We will get back to you soon.</div>';
+            document.getElementById("contact-form").reset();
+          }, 1500);
+        });
+
+      // Initialize WOW.js for animations
+      new WOW().init();
+    </script>
+  </body>
+</html>
