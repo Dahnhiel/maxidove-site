@@ -187,12 +187,40 @@
 
     /* ── HERO ── */
     .hero-section {
-      min-height: 100vh;
-      background: url('./assets/img/hero/hero-img.jpg') center center / cover no-repeat;
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('./assets/img/hero/hero-img1.jpg') center center / cover no-repeat;
+      opacity: 0.45;
+      z-index: 1;
+    }
+
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      /* Dark overlay */
+      z-index: 2;
+    }
+
+    .hero-section .container,
+    .hero-section .row {
+      position: relative;
+      z-index: 3;
     }
 
     .hero-bg-pattern {
@@ -1186,28 +1214,16 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="hero-content">
-            <h1 class="fade-up fade-up-delay-1">Win More <em>US Government</em> Contracts</h1>
-            <p class="fade-up fade-up-delay-2">Expert bid writing, federal procurement strategy, and SAM.gov tender
+            <h1 class="fade-up fade-up-delay-1">Win More <em>US Government</em> Contracts </h1>
+            <p class="fade-up fade-up-delay-2"">Expert bid writing, federal procurement strategy,
+              and SAM.gov tender
               support to help businesses secure federal contracts with confidence.</p>
             <div class="hero-btns fade-up fade-up-delay-3">
               <a href="contact.html" class="btn-primary-gold">Book a Free Consultation <i
                   class="lni lni-arrow-right"></i></a>
               <a href="#service" class="btn-outline-white">Our Services</a>
             </div>
-            <div class="hero-stats fade-up fade-up-delay-4">
-              <div class="stat-item">
-                <div class="stat-number">$120M+</div>
-                <div class="stat-label">Contracts Secured</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">250+</div>
-                <div class="stat-label">Bids Submitted</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">76%</div>
-                <div class="stat-label">Win Rate</div>
-              </div>
-            </div>
+
           </div>
         </div>
         <div class="col-lg-6">
@@ -1259,7 +1275,7 @@
             <div class="about-corner-line"></div>
             <div class="about-img-frame">
               <div class="img-placeholder-text">MC</div>
-              <img src="assets/img/about/about.jpg" alt="Maxidove Consulting"
+              <img src="assets/img/about/about-img.jpg" alt="Maxidove Consulting"
                 style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
                 onerror="this.style.display='none'">
             </div>
