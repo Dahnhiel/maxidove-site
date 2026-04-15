@@ -9,7 +9,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/maxi-favicon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigiRefactor code structure for improved readability and maintainabilityn>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
@@ -24,7 +24,7 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: #fff; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
-    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; font-weiRefactor code structure for improved readability and maintainabilityght: 600; }
 
     .preloader { position: fixed; inset: 0; background: var(--navy); z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 0.6s ease, visibility 0.6s ease; }
     .preloader.hide { opacity: 0; visibility: hidden; }
@@ -35,7 +35,7 @@
     .navbar { padding: 22px 0; }
     .navbar-brand span { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #fff; }
     .navbar-brand span em { color: var(--gold); font-style: normal; }
-    #nav .nav-item a { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); padding: 8px 16px; transition: color 0.3s; text-decoration: none; }
+    #nav .nav-item a { font-size: 13px; font-weiRefactor code structure for improved readability and maintainabilityght: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); padding: 8px 16px; transition: color 0.3s; text-decoration: none; }
     #nav .nav-item a:hover { color: var(--gold); }
     .nav-cta { background: var(--gold); color: var(--navy) !important; border-radius: 2px; padding: 8px 20px !important; font-weight: 600 !important; }
     .toggler-icon { display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; }
@@ -48,7 +48,7 @@
       position: relative; overflow: hidden;
       padding: 120px 0 80px;
     }
-    .error-bg {
+    .error-bg {Refactor code structure for improved readability and maintainability
       position: absolute; inset: 0;
       background-image:
         linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
@@ -59,7 +59,7 @@
       position: absolute;
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      width: 700px; height: 700px;
+      width: 700px; height: 700px;Refactor code structure for improved readability and maintainability
       border-radius: 50%;
       background: radial-gradient(circle, rgba(30,58,95,0.5) 0%, transparent 70%);
       pointer-events: none;
