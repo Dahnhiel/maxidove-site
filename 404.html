@@ -1,301 +1,223 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>404 | Space</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Page Not Found | Maxidove Consulting</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to Maxidove Consulting." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/maxi-favicon.png" />
 
-		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-        <!-- Place favicon.ico in the root directory -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-		<!-- ========================= CSS here ========================= -->
-		<link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css">
-        <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
-		<link rel="stylesheet" href="assets/css/animate.css">
-		<link rel="stylesheet" href="assets/css/tiny-slider.css">
-		<link rel="stylesheet" href="assets/css/glightbox.min.css">
-		<link rel="stylesheet" href="assets/css/main.css">
-    </head>
-    <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+  <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
+  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 
-        <!-- ========================= preloader start ========================= -->
-            <div class="preloader">
-                <div class="loader">
-                    <div class="ytp-spinner">
-                        <div class="ytp-spinner-container">
-                            <div class="ytp-spinner-rotator">
-                                <div class="ytp-spinner-left">
-                                    <div class="ytp-spinner-circle"></div>
-                                </div>
-                                <div class="ytp-spinner-right">
-                                    <div class="ytp-spinner-circle"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <style>
+    :root {
+      --navy: #0d1f3c; --navy-mid: #152d52; --slate: #1e3a5f;
+      --gold: #c9a84c; --gold-light: #e4c97e;
+      --off-white: #fdfbf7; --text-muted: #6b7a99;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: #fff; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+
+    .preloader { position: fixed; inset: 0; background: var(--navy); z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 0.6s ease, visibility 0.6s ease; }
+    .preloader.hide { opacity: 0; visibility: hidden; }
+    .pre-ring { width: 52px; height: 52px; border: 2px solid rgba(201,168,76,0.2); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.9s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 999; background: transparent; }
+    .navbar { padding: 22px 0; }
+    .navbar-brand span { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #fff; }
+    .navbar-brand span em { color: var(--gold); font-style: normal; }
+    #nav .nav-item a { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); padding: 8px 16px; transition: color 0.3s; text-decoration: none; }
+    #nav .nav-item a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--navy) !important; border-radius: 2px; padding: 8px 20px !important; font-weight: 600 !important; }
+    .toggler-icon { display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; }
+    .navbar-toggler { border: 1px solid rgba(255,255,255,0.3); border-radius: 2px; padding: 6px 10px; }
+
+    /* 404 MAIN */
+    .error-section {
+      flex: 1;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 120px 0 80px;
+    }
+    .error-bg {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .error-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(30,58,95,0.5) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .error-inner {
+      position: relative; z-index: 1;
+      text-align: center;
+      max-width: 560px; margin: 0 auto;
+      animation: fadeUp 0.8s ease forwards;
+    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+    .error-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(100px, 18vw, 180px);
+      font-weight: 700;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(201,168,76,0.3);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: -10px;
+      position: relative;
+    }
+    .error-number::after {
+      content: '404';
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.15;
+    }
+    .error-divider {
+      width: 48px; height: 1px;
+      background: var(--gold);
+      margin: 28px auto;
+      opacity: 0.5;
+    }
+    .error-inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 600; color: #fff;
+      margin-bottom: 14px;
+    }
+    .error-inner p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7; margin-bottom: 44px;
+    }
+    .error-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--navy);
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 14px 28px; border-radius: 2px; text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-gold:hover { background: var(--gold-light); color: var(--navy); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7);
+      font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 14px 28px; border-radius: 2px; text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .quick-links {
+      margin-top: 60px; padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .quick-links p { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.2); margin-bottom: 20px; }
+    .quick-links-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .quick-link {
+      font-size: 12px; color: rgba(255,255,255,0.4);
+      text-decoration: none; padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2px; transition: all 0.3s;
+    }
+    .quick-link:hover { color: var(--gold); border-color: rgba(201,168,76,0.3); }
+
+    /* mini footer */
+    .mini-footer {
+      padding: 20px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+    }
+    .mini-footer p { font-size: 12px; color: rgba(255,255,255,0.15); }
+  </style>
+</head>
+<body>
+
+  <div class="preloader" id="preloader"><div class="pre-ring"></div></div>
+
+  <header class="header">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+              <img src="assets/img/logo/maxi-logo.png" alt="Maxidove" onerror="this.style.display='none'" style="height:36px">
+              <span>Maxidove <em>Consulting</em></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+              <span class="toggler-icon"></span><span class="toggler-icon"></span><span class="toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+              <ul id="nav" class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="index.html#about">About</a></li>
+                <li class="nav-item"><a href="index.html#service">Services</a></li>
+                <li class="nav-item"><a href="portfolio.html">Case Studies</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+              </ul>
             </div>
-        <!-- preloader end -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
 
-        <!-- ========================= header start ========================= -->
-        <header class="header bg-white navbar-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="assets/img/logo/logo.svg" alt="Logo">
-                            </a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                            </button>
+  <section class="error-section">
+    <div class="error-bg"></div>
+    <div class="error-glow"></div>
+    <div class="container">
+      <div class="error-inner">
+        <div class="error-number">404</div>
+        <div class="error-divider"></div>
+        <h2>This Page Doesn't Exist</h2>
+        <p>The page you were looking for has been moved, deleted, or never existed. Let's get you back on track — there are government contracts to win.</p>
+        <div class="error-btns">
+          <a href="index.html" class="btn-gold"><i class="lni lni-home"></i> Back to Home</a>
+          <a href="contact.html" class="btn-outline">Contact Us</a>
+        </div>
+        <div class="quick-links">
+          <p>Or explore</p>
+          <div class="quick-links-row">
+            <a href="index.html#service" class="quick-link">Our Services</a>
+            <a href="portfolio.html" class="quick-link">Case Studies</a>
+            <a href="index.html#about" class="quick-link">About Us</a>
+            <a href="contact.html" class="quick-link">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul id="nav" class="navbar-nav ms-auto">
-                                    <li class="nav-item">
-                                        <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
-                                        data-bs-target="#submenu-1-1" aria-controls="navbarSupportedContent"
-                                        aria-expanded="false" aria-label="Toggle navigation">Home</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-1">
-                                            <li class="nav-item"><a href="index.html">Home Style 1</a></li>
-                                            <li class="nav-item"><a href="#0">Home Style 2</a></li>
-                                            <li class="nav-item"><a href="#0">Home Style 3</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="about.html">About</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
-                                        data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
-                                        aria-expanded="false" aria-label="Toggle navigation">Service</a>
+  <div class="mini-footer">
+    <div class="container">
+      <p>© 2025 Maxidove Consulting. All Rights Reserved.</p>
+    </div>
+  </div>
 
-                                        <ul class="sub-menu collapse" id="submenu-1-2">
-                                            <li class="nav-item"><a href="service-1.html">Service Style 1</a></li>
-                                            <li class="nav-item"><a href="#0">Service Style 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll dd-menu active collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
-                                        data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
-                                        aria-expanded="false" aria-label="Toggle navigation">Pages</a>
-
-                                        <ul class="sub-menu collapse" id="submenu-1-3">
-                                            <li class="nav-item"><a href="about.html">About Us</a></li>
-                                            <li class="nav-item"><a href="#0">Team Members</a></li>
-                                            <li class="nav-item"><a href="#0">Portfolio</a></li>
-                                            <li class="nav-item"><a href="#0">Portfolio Single</a></li>
-                                            <li class="nav-item"><a href="#0">Counter</a></li>
-                                            <li class="nav-item"><a href="#0">Accordion</a></li>
-                                            <li class="nav-item"><a href="#0">Alerts</a></li>
-                                            <li class="nav-item"><a href="#0">Map</a></li>
-                                            <li class="nav-item active"><a href="404.html">404</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
-                                        data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent"
-                                        aria-expanded="false" aria-label="Toggle navigation">Blog</a>
-
-                                        <ul class="sub-menu collapse" id="submenu-1-4">
-                                            <li class="nav-item"><a href="#0">Blog Style 1</a></li>
-                                            <li class="nav-item"><a href="#0">Blog Style 2</a></li>
-                                            <li class="nav-item"><a href="#0">Blog Single</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="contact.html">Contact</a>
-                                    </li>
-                                </ul>
-                                <form action="#" class="search-form">
-                                    <input type="text" placeholder="Search">
-                                    <button type="submit"><i class="lni lni-search-alt"></i></button>
-                                </form>
-                            </div> <!-- navbar collapse -->
-                        </nav> <!-- navbar -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-        
-        </header>
-        <!-- ========================= header end ========================= -->
-
-        <!-- ========================= page-banner-section start ========================= -->
-        <section class="page-banner-section pt-75 pb-75 img-bg" style="background-image: url('assets/img/bg/common-bg.svg')">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="banner-content">
-                            <h2 class="text-white">404 Page</h2>
-                            <div class="page-breadcrumb">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item" aria-current="page"><a href="javascript:void(0)">Home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">404</li>
-                                    </ol>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ========================= page-banner-section end ========================= -->
-
-        <!-- ========================= page-404-section end ========================= -->
-        <section class="page-404-section pt-130 pb-130">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="page-404-content text-center">
-                            <h2 class="mb-30">404</h2>
-                            <h4 class="mb-40">Page Not Found!</h4>
-                            <a href="index.html" class="theme-btn">Back to Home</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ========================= page-404-section end ========================= -->
-
-        <!-- ========================= client-logo-section start ========================= -->
-        <section class="client-logo-section pt-100 pb-130">
-            <div class="container">
-                <div class="client-logo-wrapper">
-                    <div class="client-logo-carousel d-flex align-items-center justify-content-between">
-                        <div class="client-logo">
-                            <img src="assets/img/client-logo/uideck-logo.svg" alt="">
-                        </div>
-                        <div class="client-logo">
-                            <img src="assets/img/client-logo/pagebulb-logo.svg" alt="">
-                        </div>
-                        <div class="client-logo">
-                            <img src="assets/img/client-logo/lineicons-logo.svg" alt="">
-                        </div>
-                        <div class="client-logo">
-                            <img src="assets/img/client-logo/graygrids-logo.svg" alt="">
-                        </div>
-                        <div class="client-logo">
-                            <img src="assets/img/client-logo/lineicons-logo.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ========================= client-logo-section end ========================= -->
-
-        <!-- ========================= footer start ========================= -->
-        <footer class="footer pt-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="footer-widget mb-60 wow fadeInLeft" data-wow-delay=".2s">
-                            <a href="index.html" class="logo mb-30"><img src="assets/img/logo/logo.svg" alt="logo"></a>
-                            <p class="mb-30 footer-desc">We Crafted an awesome desig library that is robust and intuitive to use. No matter you're building a business presentation websit.</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6">
-                        <div class="footer-widget mb-60 wow fadeInUp" data-wow-delay=".4s">
-                            <h4>Quick Link</h4>
-                            <ul class="footer-links">
-                                <li>
-                                    <a href="javascript:void(0)">Home</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Service</a>
-                                </li> 
-                                <li>
-                                    <a href="javascript:void(0)">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6">
-                        <div class="footer-widget mb-60 wow fadeInUp" data-wow-delay=".6s">
-                            <h4>Service</h4>
-                            <ul class="footer-links">
-                                <li>
-                                    <a href="javascript:void(0)">Marketing</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Branding</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Web Design</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Graphics Design</a>
-                                </li> 
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6">
-                        <div class="footer-widget mb-60 wow fadeInRight" data-wow-delay=".8s">
-                            <h4>Contact</h4>
-                            <ul class="footer-contact">
-                                <li>
-                                    <p>+00983467367234</p>
-                                </li>
-                                <li>
-                                    <p>yourmail@gmail.com</p>
-                                </li>
-                                <li>
-                                    <p>United State Of America
-                                    *12 Street House</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="copyright-area">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                             <div class="footer-social-links">
-                                <ul class="d-flex">
-                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-instagram-filled"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="wow fadeInUp" data-wow-delay=".3s">Template Designed by <a href="https://GrayGrids.com" rel="nofollow">GrayGrids</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- ========================= footer end ========================= -->
-
-
-        <!-- ========================= scroll-top ========================= -->
-        <a href="#" class="scroll-top">
-            <i class="lni lni-arrow-up"></i>
-        </a>
-        
-		<!-- ========================= JS here ========================= -->
-		<script src="assets/js/bootstrap.bundle-5.0.0-beta1.min.js"></script>
-		<script src="assets/js/contact-form.js"></script>
-        <script src="assets/js/count-up.min.js"></script>
-        <script src="assets/js/tiny-slider.js"></script>
-        <script src="assets/js/isotope.min.js"></script>
-        <script src="assets/js/glightbox.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/imagesloaded.min.js"></script>
-		<script src="assets/js/main.js"></script>
-    </body>
+  <script src="assets/js/bootstrap.bundle-5.0.0-beta1.min.js"></script>
+  <script>
+    window.addEventListener('load', () => { setTimeout(() => document.getElementById('preloader').classList.add('hide'), 500); });
+  </script>
+</body>
 </html>

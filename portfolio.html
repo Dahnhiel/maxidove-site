@@ -1,1306 +1,486 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Portfolio | Maxidove</title>
-    <meta
-      name="description"
-      content="Explore our portfolio of web design, branding, mobile app development, and other digital projects."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="assets/img/favicon.png"
-    />
-
-    <!-- ========================= CSS here ========================= -->
-    <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
-    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/tiny-slider.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-    />
-
-    <!-- Portfolio Page Specific CSS -->
-    <style>
-      /* Portfolio Page Styles */
-      .portfolio-section {
-        padding: 80px 0;
-      }
-      .portfolio-page-header {
-        background-color: #f8f9fa;
-        padding: 100px 0 70px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .portfolio-page-header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          45deg,
-          rgba(55, 99, 235, 0.1),
-          rgba(111, 66, 193, 0.1)
-        );
-        z-index: 1;
-      }
-
-      .portfolio-page-header .container {
-        position: relative;
-        z-index: 2;
-      }
-
-      .shape {
-        position: absolute;
-        z-index: 0;
-      }
-
-      .shape1 {
-        top: 50px;
-        left: 0;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background: rgba(55, 99, 235, 0.05);
-      }
-
-      .shape2 {
-        bottom: -50px;
-        right: 50px;
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        background: rgba(111, 66, 193, 0.05);
-      }
-
-      .portfolio-filters {
-        margin-bottom: 50px;
-      }
-
-      .portfolio-filter-btn {
-        font-size: 15px;
-        font-weight: 500;
-        color: #6c757d;
-        padding: 8px 20px;
-        border-radius: 30px;
-        margin: 0 5px 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: 1px solid #e9ecef;
-        background-color: #fff;
-      }
-
-      .portfolio-filter-btn.active,
-      .portfolio-filter-btn:hover {
-        color: #fff;
-        background: linear-gradient(45deg, #3763eb, #6f42c1);
-        border-color: transparent;
-        box-shadow: 0 5px 15px rgba(55, 99, 235, 0.15);
-      }
-
-      .portfolio-grid {
-        margin-bottom: 50px;
-      }
-
-      .portfolio-item {
-        margin-bottom: 30px;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-        opacity: 1;
-        animation: fadeIn 0.6s ease forwards;
-      }
-
-      .portfolio-img {
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-        cursor: pointer;
-      }
-
-      .portfolio-img img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
-
-      .portfolio-item:hover .portfolio-img img {
-        transform: scale(1.05);
-      }
-
-      .portfolio-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(55, 99, 235, 0.85);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: all 0.4s ease;
-      }
-
-      .portfolio-item:hover .portfolio-overlay {
-        opacity: 1;
-      }
-
-      .portfolio-content {
-        text-align: center;
-        padding: 20px;
-        transform: translateY(20px);
-        transition: all 0.4s ease;
-        width: 100%;
-      }
-
-      .portfolio-item:hover .portfolio-content {
-        transform: translateY(0);
-      }
-
-      .portfolio-content h4 {
-        color: #fff;
-        font-size: 22px;
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-
-      .portfolio-content p {
-        color: #fff;
-        opacity: 0.9;
-        margin-bottom: 15px;
-      }
-
-      .portfolio-action-btns {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-      }
-
-      .portfolio-action-btn {
-        width: 45px;
-        height: 45px;
-        background: #fff;
-        color: #3763eb;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        transition: all 0.3s ease;
-      }
-
-      .portfolio-action-btn:hover {
-        background: #6f42c1;
-        color: #fff;
-      }
-
-      .portfolio-pagination {
-        margin-top: 30px;
-        text-align: center;
-      }
-
-      .pagination {
-        display: inline-flex;
-        justify-content: center;
-      }
-
-      .page-item {
-        margin: 0 5px;
-      }
-
-      .page-link {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        color: #6c757d;
-        border: 1px solid #e9ecef;
-        transition: all 0.3s ease;
-        cursor: pointer;
-      }
-
-      .page-item.active .page-link,
-      .page-link:hover {
-        background: linear-gradient(45deg, #3763eb, #6f42c1);
-        color: #fff;
-        border-color: transparent;
-      }
-
-      .portfolio-cta-section {
-        background-color: #f8f9fa;
-        padding: 80px 0;
-        text-align: center;
-      }
-
-      .portfolio-cta-content {
-        max-width: 700px;
-        margin: 0 auto;
-      }
-
-      .theme-btn {
-        padding: 15px 30px;
-        border-radius: 30px;
-        background: linear-gradient(45deg, #3763eb, #6f42c1);
-        color: #fff;
-        font-weight: 600;
-        border: none;
-        transition: all 0.3s ease;
-        display: inline-block;
-        text-decoration: none;
-      }
-
-      .theme-btn:hover {
-        background: linear-gradient(45deg, #6f42c1, #3763eb);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(55, 99, 235, 0.2);
-        color: #fff;
-        text-decoration: none;
-      }
-
-      .fade-in-item {
-        animation: fadeIn 0.6s ease forwards;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Portfolio Modal Slider Styles */
-      .portfolio-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        z-index: 1000;
-        overflow-y: auto;
-      }
-
-      .portfolio-modal-content {
-        position: relative;
-        width: 90%;
-        max-width: 1000px;
-        margin: 40px auto;
-        height: auto;
-        min-height: calc(100vh - 80px);
-      }
-
-      .portfolio-modal-close {
-        position: absolute;
-        top: -40px;
-        right: 0;
-        color: #fff;
-        font-size: 28px;
-        cursor: pointer;
-        z-index: 1005;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        transition: all 0.3s;
-      }
-
-      .portfolio-modal-close:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: scale(1.1);
-      }
-
-      .portfolio-slider-container {
-        width: 100%;
-        padding: 20px 0;
-      }
-
-      .portfolio-slider {
-        width: 100%;
-        margin-bottom: 20px;
-      }
-
-      .portfolio-slider-item {
-        position: relative;
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        height: 60vh;
-      }
-
-      .portfolio-slider-item img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        border-radius: 5px;
-      }
-
-      .portfolio-slider-nav {
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .portfolio-slider-nav .slider-nav-item {
-        height: 70px;
-        margin: 0 5px;
-        cursor: pointer;
-        opacity: 0.5;
-        transition: all 0.3s;
-      }
-
-      .portfolio-slider-nav .slider-nav-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 5px;
-      }
-
-      .portfolio-slider-nav .slider-nav-item.slick-current {
-        opacity: 1;
-        border: 2px solid #3763eb;
-      }
-
-      .portfolio-slider-info {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 15px;
-        background: rgba(0, 0, 0, 0.7);
-        color: #fff;
-        transform: translateY(100%);
-        transition: all 0.3s;
-      }
-
-      .portfolio-slider-item:hover .portfolio-slider-info {
-        transform: translateY(0);
-      }
-
-      .portfolio-slider-title {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 5px;
-      }
-
-      .portfolio-slider-category {
-        font-size: 14px;
-        opacity: 0.7;
-      }
-
-      .slick-prev,
-      .slick-next {
-        width: 50px;
-        height: 50px;
-        z-index: 10;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-      }
-
-      .slick-prev:hover,
-      .slick-next:hover {
-        background: rgba(0, 0, 0, 0.8);
-      }
-
-      .slick-prev {
-        left: 15px;
-      }
-
-      .slick-next {
-        right: 15px;
-      }
-
-      .slick-prev:before,
-      .slick-next:before {
-        font-size: 24px;
-        color: #fff;
-      }
-
-      /* Loading animation */
-      .portfolio-loading {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50px;
-        height: 50px;
-        border: 5px solid rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        border-top-color: #fff;
-        animation: spin 1s ease-in-out infinite;
-        z-index: 1004;
-      }
-
-      @keyframes spin {
-        to {
-          transform: translate(-50%, -50%) rotate(360deg);
-        }
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 992px) {
-        .portfolio-filter-btn {
-          padding: 6px 15px;
-          margin: 0 3px 8px;
-          font-size: 14px;
-        }
-
-        .portfolio-modal-content {
-          width: 95%;
-          display: flex;
-          justify-content: center;
-          margin: 20px auto;
-        }
-
-        .portfolio-slider-item {
-          height: 50vh;
-        }
-
-        .portfolio-slider-nav .slider-nav-item {
-          height: 50px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .portfolio-page-header {
-          padding: 70px 0 50px;
-        }
-
-        .portfolio-content h4 {
-          font-size: 18px;
-        }
-
-        .portfolio-slider-item {
-          height: 40vh;
-        }
-
-        .slick-prev {
-          left: 10px;
-        }
-
-        .slick-next {
-          right: 10px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- ========================= preloader start ========================= -->
-    <div class="preloader">
-      <div class="loader">
-        <div class="ytp-spinner">
-          <div class="ytp-spinner-container">
-            <div class="ytp-spinner-rotator">
-              <div class="ytp-spinner-left">
-                <div class="ytp-spinner-circle"></div>
-              </div>
-              <div class="ytp-spinner-right">
-                <div class="ytp-spinner-circle"></div>
-              </div>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Case Studies | Maxidove Consulting</title>
+  <meta name="description" content="Explore Maxidove Consulting's track record of winning government contracts and UK tenders for businesses across multiple sectors." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/maxi-favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
+  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <style>
+    :root {
+      --navy: #0d1f3c; --navy-mid: #152d52; --slate: #1e3a5f;
+      --gold: #c9a84c; --gold-light: #e4c97e;
+      --cream: #f8f5ef; --off-white: #fdfbf7;
+      --text-dark: #0d1f3c; --text-muted: #6b7a99;
+      --border: rgba(201,168,76,0.2);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--text-dark); overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+
+    .preloader { position: fixed; inset: 0; background: var(--navy); z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 0.6s ease, visibility 0.6s ease; }
+    .preloader.hide { opacity: 0; visibility: hidden; }
+    .pre-ring { width: 52px; height: 52px; border: 2px solid rgba(201,168,76,0.2); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.9s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 999; background: var(--navy); box-shadow: 0 2px 30px rgba(13,31,60,0.3); }
+    .navbar { padding: 18px 0; }
+    .navbar-brand span { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #fff; }
+    .navbar-brand span em { color: var(--gold); font-style: normal; }
+    #nav .nav-item a { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.8); padding: 8px 16px; transition: color 0.3s; text-decoration: none; }
+    #nav .nav-item a:hover, #nav .nav-item a.active { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--navy) !important; border-radius: 2px; padding: 8px 20px !important; font-weight: 600 !important; }
+    .toggler-icon { display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; }
+    .navbar-toggler { border: 1px solid rgba(255,255,255,0.3); border-radius: 2px; padding: 6px 10px; }
+
+    .page-banner { background: var(--navy); padding: 140px 0 80px; position: relative; overflow: hidden; }
+    .page-banner::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+    .page-banner-inner { position: relative; z-index: 1; }
+    .breadcrumb-trail { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+    .breadcrumb-trail a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.06em; transition: color 0.3s; }
+    .breadcrumb-trail a:hover { color: var(--gold); }
+    .breadcrumb-trail span { font-size: 12px; color: rgba(255,255,255,0.2); }
+    .breadcrumb-trail .current { font-size: 12px; color: var(--gold); letter-spacing: 0.06em; }
+    .page-banner h1 { font-size: clamp(36px, 5vw, 60px); color: #fff; line-height: 1.1; }
+    .page-banner p { font-size: 16px; color: rgba(255,255,255,0.5); margin-top: 14px; max-width: 500px; }
+
+    /* STATS BAR */
+    .stats-bar { background: var(--gold); padding: 32px 0; }
+    .stats-row { display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 24px; }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 700; color: var(--navy); line-height: 1; }
+    .stat-lbl { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(13,31,60,0.6); margin-top: 4px; }
+
+    /* FILTERS */
+    .portfolio-section { padding: 90px 0; }
+    .section-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .section-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 600; color: var(--navy); margin-bottom: 16px; }
+    .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; }
+    .filter-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-muted); padding: 8px 20px;
+      border: 1px solid rgba(13,31,60,0.12); border-radius: 2px;
+      background: transparent; cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .filter-btn:hover, .filter-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+    /* CASE STUDY CARDS */
+    .case-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; }
+    @media (max-width: 900px) { .case-grid { grid-template-columns: 1fr; } }
+    .case-card {
+      border: 1px solid rgba(13,31,60,0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+      transition: all 0.4s ease;
+      display: flex; flex-direction: column;
+    }
+    .case-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(13,31,60,0.1); }
+    .case-card-header {
+      padding: 36px 36px 28px;
+      background: var(--navy);
+      position: relative; overflow: hidden;
+    }
+    .case-card-header::before {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 120px; height: 120px;
+      background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+    }
+    .case-tag {
+      display: inline-block;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 2px; padding: 4px 10px;
+      margin-bottom: 16px;
+    }
+    .case-card-header h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #fff; line-height: 1.2; margin-bottom: 8px; }
+    .case-contract-value { font-size: 13px; color: rgba(255,255,255,0.4); }
+    .case-contract-value strong { color: var(--gold-light); font-size: 20px; font-family: 'Cormorant Garamond', serif; }
+    .case-card-body { padding: 28px 36px; flex: 1; display: flex; flex-direction: column; }
+    .case-card-body p { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; }
+    .case-results { display: flex; gap: 24px; padding: 20px 0; border-top: 1px solid rgba(13,31,60,0.06); border-bottom: 1px solid rgba(13,31,60,0.06); margin-bottom: 20px; }
+    .case-result-item .r-num { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--navy); line-height: 1; }
+    .case-result-item .r-lbl { font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; margin-top: 3px; }
+    .case-card-footer { margin-top: auto; }
+    .case-sector { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .case-sector i { color: var(--gold); }
+
+    /* TESTIMONIALS */
+    .testimonials-section { padding: 100px 0; background: var(--cream); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 52px; }
+    @media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; } }
+    .testi-card {
+      background: #fff;
+      border: 1px solid rgba(13,31,60,0.06);
+      border-radius: 4px;
+      padding: 32px 28px;
+      position: relative;
+    }
+    .testi-card::before { content: '\201C'; font-family: 'Cormorant Garamond', serif; font-size: 80px; color: rgba(201,168,76,0.15); position: absolute; top: 8px; left: 22px; line-height: 1; }
+    .testi-stars { color: var(--gold); font-size: 13px; margin-bottom: 16px; letter-spacing: 2px; }
+    .testi-card p { font-size: 14px; color: var(--text-muted); line-height: 1.75; margin-bottom: 24px; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px; font-weight: 600; color: var(--gold);
+      flex-shrink: 0;
+    }
+    .testi-name { font-size: 14px; font-weight: 600; color: var(--navy); }
+    .testi-role { font-size: 12px; color: var(--text-muted); }
+
+    /* CTA */
+    .cta-section { padding: 100px 0; background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%); position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px); background-size: 50px 50px; }
+    .cta-inner { position: relative; z-index: 1; text-align: center; }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 50px); color: #fff; margin-bottom: 14px; }
+    .cta-section p { font-size: 16px; color: rgba(255,255,255,0.55); margin-bottom: 36px; }
+    .btn-primary-gold { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--navy); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 16px 32px; border-radius: 2px; text-decoration: none; transition: all 0.3s; }
+    .btn-primary-gold:hover { background: var(--gold-light); color: var(--navy); }
+
+    footer { background: #070f1e; padding: 80px 0 0; border-top: 1px solid rgba(201,168,76,0.1); }
+    .footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 14px; }
+    .footer-brand-name em { color: var(--gold); font-style: normal; }
+    .footer-desc { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.75; max-width: 240px; }
+    footer h5 { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+    .footer-contact-item i { color: var(--gold); font-size: 15px; margin-top: 2px; }
+    .footer-contact-item span { font-size: 13px; color: rgba(255,255,255,0.4); }
+    .footer-bottom { margin-top: 60px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.2); }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-social a { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.3); font-size: 14px; transition: all 0.3s; text-decoration: none; }
+    .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+    .scroll-top { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; background: var(--gold); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: var(--navy); font-size: 18px; text-decoration: none; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; }
+    .scroll-top.show { opacity: 1; visibility: visible; }
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-delay-1 { transition-delay: 0.1s; } .fade-up-delay-2 { transition-delay: 0.2s; } .fade-up-delay-3 { transition-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+  <div class="preloader" id="preloader"><div class="pre-ring"></div></div>
+
+  <header class="header">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+              <img src="assets/img/logo/maxi-logo.png" alt="Maxidove" onerror="this.style.display='none'" style="height:36px">
+              <span>Maxidove <em>Consulting</em></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+              <span class="toggler-icon"></span><span class="toggler-icon"></span><span class="toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+              <ul id="nav" class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="index.html#about">About</a></li>
+                <li class="nav-item"><a href="index.html#service">Services</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="active">Case Studies</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+              </ul>
             </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <section class="page-banner">
+    <div class="container">
+      <div class="page-banner-inner">
+        <div class="breadcrumb-trail">
+          <a href="index.html">Home</a><span>/</span><span class="current">Case Studies</span>
+        </div>
+        <h1>Our Track Record of<br>Winning Contracts</h1>
+        <p>Real results for real businesses — explore our case studies across multiple sectors and contract values.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-item"><div class="stat-num">£85M+</div><div class="stat-lbl">Contracts Secured</div></div>
+        <div class="stat-item"><div class="stat-num">200+</div><div class="stat-lbl">Bids Submitted</div></div>
+        <div class="stat-item"><div class="stat-num">78%</div><div class="stat-lbl">Average Win Rate</div></div>
+        <div class="stat-item"><div class="stat-num">12+</div><div class="stat-lbl">Sectors Covered</div></div>
+        <div class="stat-item"><div class="stat-num">50+</div><div class="stat-lbl">Happy Clients</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE STUDIES -->
+  <section class="portfolio-section">
+    <div class="container">
+      <div class="row align-items-end mb-4">
+        <div class="col-lg-7 fade-up">
+          <div class="section-eyebrow">Our Work</div>
+          <h2 class="section-title">Selected Case Studies</h2>
+        </div>
+        <div class="col-lg-5 fade-up fade-up-delay-1">
+          <div class="filter-bar" id="filterBar">
+            <button class="filter-btn active" data-filter="all">All Sectors</button>
+            <button class="filter-btn" data-filter="construction">Construction</button>
+            <button class="filter-btn" data-filter="it">IT &amp; Tech</button>
+            <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+            <button class="filter-btn" data-filter="professional">Professional Services</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-grid" id="caseGrid">
+
+        <div class="case-card fade-up" data-sector="construction">
+          <div class="case-card-header">
+            <div class="case-tag">Construction</div>
+            <h3>Local Authority Building Maintenance Framework</h3>
+            <div class="case-contract-value">Contract Value: <strong>£2.4M</strong></div>
+          </div>
+          <div class="case-card-body">
+            <p>A mid-size building contractor needed support responding to a multi-lot local authority framework. We developed full method statements, social value commitments, and pricing submissions across all three lots — securing two of the three.</p>
+            <div class="case-results">
+              <div class="case-result-item"><div class="r-num">2/3</div><div class="r-lbl">Lots Won</div></div>
+              <div class="case-result-item"><div class="r-num">96%</div><div class="r-lbl">Quality Score</div></div>
+              <div class="case-result-item"><div class="r-num">8 days</div><div class="r-lbl">Turnaround</div></div>
+            </div>
+            <div class="case-card-footer"><span class="case-sector"><i class="lni lni-map-marker"></i> West Midlands Council</span></div>
+          </div>
+        </div>
+
+        <div class="case-card fade-up fade-up-delay-1" data-sector="it">
+          <div class="case-card-header">
+            <div class="case-tag">IT &amp; Technology</div>
+            <h3>NHS Digital Transformation Software Tender</h3>
+            <div class="case-contract-value">Contract Value: <strong>£1.8M</strong></div>
+          </div>
+          <div class="case-card-body">
+            <p>A SaaS company targeting NHS trusts needed a strong ITT response for a digital patient engagement platform. We produced a fully compliant 80-page submission covering technical, commercial, and social value requirements.</p>
+            <div class="case-results">
+              <div class="case-result-item"><div class="r-num">Won</div><div class="r-lbl">Contract Status</div></div>
+              <div class="case-result-item"><div class="r-num">1st</div><div class="r-lbl">Ranked Position</div></div>
+              <div class="case-result-item"><div class="r-num">12 days</div><div class="r-lbl">Submission Time</div></div>
+            </div>
+            <div class="case-card-footer"><span class="case-sector"><i class="lni lni-map-marker"></i> NHS England Trust</span></div>
+          </div>
+        </div>
+
+        <div class="case-card fade-up" data-sector="healthcare">
+          <div class="case-card-header">
+            <div class="case-tag">Healthcare</div>
+            <h3>Domiciliary Care Services Contract</h3>
+            <div class="case-contract-value">Contract Value: <strong>£960K</strong></div>
+          </div>
+          <div class="case-card-body">
+            <p>A care provider entering the public sector for the first time needed PQQ and ITT support for a domiciliary care contract. We guided them through CQC compliance requirements, staffing questions, and quality frameworks.</p>
+            <div class="case-results">
+              <div class="case-result-item"><div class="r-num">Won</div><div class="r-lbl">Contract Status</div></div>
+              <div class="case-result-item"><div class="r-num">First</div><div class="r-lbl">Gov. Contract</div></div>
+              <div class="case-result-item"><div class="r-num">92%</div><div class="r-lbl">Tender Score</div></div>
+            </div>
+            <div class="case-card-footer"><span class="case-sector"><i class="lni lni-map-marker"></i> County Council, South East England</span></div>
+          </div>
+        </div>
+
+        <div class="case-card fade-up fade-up-delay-1" data-sector="professional">
+          <div class="case-card-header">
+            <div class="case-tag">Professional Services</div>
+            <h3>Management Consultancy Framework — Crown Commercial Service</h3>
+            <div class="case-contract-value">Contract Value: <strong>£500K+/yr</strong></div>
+          </div>
+          <div class="case-card-body">
+            <p>A boutique management consultancy wanted to join the CCS Management Consultancy Framework 3 (MCF3). We prepared their full application across multiple service lines, handling case studies, pricing, and accreditation evidence.</p>
+            <div class="case-results">
+              <div class="case-result-item"><div class="r-num">Approved</div><div class="r-lbl">Framework Status</div></div>
+              <div class="case-result-item"><div class="r-num">3</div><div class="r-lbl">Lots Approved</div></div>
+              <div class="case-result-item"><div class="r-num">CCS</div><div class="r-lbl">Framework</div></div>
+            </div>
+            <div class="case-card-footer"><span class="case-sector"><i class="lni lni-map-marker"></i> Crown Commercial Service, UK-wide</span></div>
+          </div>
+        </div>
+
+        <div class="case-card fade-up" data-sector="construction">
+          <div class="case-card-header">
+            <div class="case-tag">Construction</div>
+            <h3>Housing Association Planned Maintenance Tender</h3>
+            <div class="case-contract-value">Contract Value: <strong>£4.1M</strong></div>
+          </div>
+          <div class="case-card-body">
+            <p>A specialist contractor bidding for a 3-year planned maintenance contract with a large housing association. We produced a comprehensive submission including method statements, social value plan, and a resident engagement strategy.</p>
+            <div class="case-results">
+              <div class="case-result-item"><div class="r-num">Won</div><div class="r-lbl">Contract Status</div></div>
+              <div class="case-result-item"><div class="r-num">3yr</div><div class="r-lbl">Contract Term</div></div>
+              <div class="case-result-item"><div class="r-num">98%</div><div class="r-lbl">Quality Score</div></div>
+            </div>
+            <div class="case-card-footer"><span class="case-sector"><i class="lni lni-map-marker"></i> Greater Manchester Housing</span></div>
+          </div>
+        </div>
+
+        <div class="case-card fade-up fade-up-delay-1" data-sector="it">
+          <div class="case-card-header">
+            <div class="case-tag">IT &amp; Technology</div>
+            <h3>G-Cloud 13 Supplier Registration</h3>
+            <div class="case-contract-value">Contract Value: <strong>Ongoing Pipeline</strong></div>
+          </div>
+          <div class="case-card-body">
+            <p>A cloud services provider needed support registering on G-Cloud 13 across 6 service lots. We drafted all service definitions, pricing templates, and terms documentation required for a compliant and competitive listing.</p>
+            <div class="case-results">
+              <div class="case-result-item"><div class="r-num">6</div><div class="r-lbl">Lots Listed</div></div>
+              <div class="case-result-item"><div class="r-num">G13</div><div class="r-lbl">Framework</div></div>
+              <div class="case-result-item"><div class="r-num">Active</div><div class="r-lbl">Buyer Enquiries</div></div>
+            </div>
+            <div class="case-card-footer"><span class="case-sector"><i class="lni lni-map-marker"></i> Digital Marketplace, UK</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-6 fade-up">
+          <div class="section-eyebrow" style="justify-content:center;">Client Feedback</div>
+          <h2 class="section-title">What Our Clients Say</h2>
+        </div>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card fade-up">
+          <div class="testi-stars">★★★★★</div>
+          <p>Maxidove transformed our bidding strategy from scratch. We had zero experience in public sector tendering and within 6 months we had our first government contract. Genuinely couldn't have done it without them.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">DH</div>
+            <div><div class="testi-name">David H.</div><div class="testi-role">Director, Facilities Management Company</div></div>
+          </div>
+        </div>
+        <div class="testi-card fade-up fade-up-delay-1">
+          <div class="testi-stars">★★★★★</div>
+          <p>Professional, fast, and incredibly thorough. They took our half-finished bid and turned it into a winning submission. The quality score feedback from the contracting authority was exceptional.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SL</div>
+            <div><div class="testi-name">Sarah L.</div><div class="testi-role">CEO, Digital Health Startup</div></div>
+          </div>
+        </div>
+        <div class="testi-card fade-up fade-up-delay-2">
+          <div class="testi-stars">★★★★★</div>
+          <p>We've used three bid consultancies before Maxidove. They are by far the most responsive, strategic, and value-driven. Our CCS framework approval opened up an entire new revenue stream for us.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MK</div>
+            <div><div class="testi-name">Michael K.</div><div class="testi-role">MD, Management Consultancy</div></div>
           </div>
         </div>
       </div>
     </div>
-    <!-- preloader end -->
+  </section>
 
-    <!-- ========================= header start ========================= -->
-    <header class="header navbar-area">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-12">
-            <nav class="navbar navbar-expand-lg">
-              <a class="navbar-brand" href="index.html">
-                <img src="assets/img/logo/maxi-logo.png" alt="MaxiDove Logo" />
-              </a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul id="nav" class="navbar-nav ms-auto">
-                  <li class="nav-item">
-                    <a href="index.html" class="active">Home</a>
-                  </li>
-                  <li class="nav-item"><a href="index.html#about">About</a></li>
-                  <li class="nav-item">
-                    <a href="index.html#service">Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="portfolio.html">Portfolio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="index.html#contact">Contact</a>
-                  </li>
-                </ul>
-                <div class="search-box">
-                  <form action="#" class="search-form">
-                    <input type="text" placeholder="Search" />
-                    <button type="submit">
-                      <i class="lni lni-search-alt"></i>
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </nav>
-          </div>
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner fade-up">
+        <div class="section-eyebrow" style="justify-content:center;color:var(--gold)">Start Winning</div>
+        <h2>Ready to Add Your Case Study Here?</h2>
+        <p>Book a free consultation and let's discuss your next government contract opportunity.</p>
+        <a href="contact.html" class="btn-primary-gold">Book Free Consultation <i class="lni lni-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand-name">Maxidove <em>Consulting</em></div>
+          <p class="footer-desc">Helping UK businesses navigate government procurement and win public sector contracts through expert bid writing and tender consultancy.</p>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#service">Services</a></li>
+            <li><a href="portfolio.html">Case Studies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Services</h5>
+          <ul class="footer-links">
+            <li><a href="index.html#service">Bid &amp; Tender Writing</a></li>
+            <li><a href="index.html#service">Government Contract Consultation</a></li>
+            <li><a href="index.html#service">PQQ / SQ Preparation</a></li>
+            <li><a href="index.html#service">Framework Applications</a></li>
+            <li><a href="index.html#service">Post-Award Support</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Contact</h5>
+          <div class="footer-contact-item"><i class="lni lni-phone"></i><span>+234 (0)8139962835</span></div>
+          <div class="footer-contact-item"><i class="lni lni-envelope"></i><span>maxidoveconversion@gmail.com</span></div>
+          <div class="footer-contact-item"><i class="lni lni-map-marker"></i><span>United Kingdom</span></div>
         </div>
       </div>
-    </header>
-    <!-- ========================= header end ========================= -->
-
-    <!-- ========================= portfolio-page-header start ========================= -->
-    <section class="portfolio-page-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="portfolio-header-content text-center">
-              <h1 class="wow fadeInDown" data-wow-delay=".2s">Our Portfolio</h1>
-              <p class="wow fadeInUp" data-wow-delay=".4s">
-                Explore our creative work and successful projects across various
-                industries.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="shape shape1"></div>
-      <div class="shape shape2"></div>
-    </section>
-    <!-- ========================= portfolio-page-header end ========================= -->
-
-    <!-- ========================= portfolio-section start ========================= -->
-    <section class="portfolio-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="portfolio-filters text-center">
-              <button class="portfolio-filter-btn active" data-filter="*">
-                All Projects
-              </button>
-              <button class="portfolio-filter-btn" data-filter="web-design">
-                Web Design
-              </button>
-              <button class="portfolio-filter-btn" data-filter="sales">
-                Shopify Sales
-              </button>
-              <button class="portfolio-filter-btn" data-filter="graphic">
-                Graphic Design
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="row portfolio-grid" id="portfolio-grid"></div>
-
-        <div class="row">
-          <div class="col-12">
-            <div class="portfolio-pagination">
-              <nav aria-label="Page navigation">
-                <ul class="pagination" id="pagination"></ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ========================= portfolio-section end ========================= -->
-
-    <!-- Portfolio Modal -->
-    <div class="portfolio-modal" id="portfolioModal">
-      <div class="portfolio-modal-content">
-        <span class="portfolio-modal-close"><i class="lni lni-close"></i></span>
-        <div class="portfolio-loading"></div>
-        <div class="portfolio-slider-container">
-          <div class="portfolio-slider" id="portfolioSlider"></div>
-          <div class="portfolio-slider-nav" id="portfolioSliderNav"></div>
+      <div class="footer-bottom">
+        <p>© 2025 Maxidove Consulting. All Rights Reserved. Designed by DevDan</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/maxidove_conv?igsh=OTFpM3c4M2VtcWh4&utm_source=qr"><i class="lni lni-instagram-filled"></i></a>
         </div>
       </div>
     </div>
+  </footer>
 
-    <!-- ========================= portfolio-cta-section start ========================= -->
-    <section class="portfolio-cta-section">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xl-8 col-lg-10">
-            <div
-              class="portfolio-cta-content text-center wow fadeInUp"
-              data-wow-delay=".2s"
-            >
-              <h2>Let's Create Something Amazing Together</h2>
-              <p class="mb-40">
-                Ready to start your next project? Our team of experts is here to
-                help turn your vision into reality.
-              </p>
-              <a href="contact.html" class="theme-btn">Get In Touch</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ========================= portfolio-cta-section end ========================= -->
+  <a href="#" class="scroll-top" id="scrollTop"><i class="lni lni-arrow-up"></i></a>
 
-    <!-- ========================= footer start ========================= -->
-    <footer class="footer pt-100">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-3 col-lg-4 col-md-6">
-            <div
-              class="footer-widget mb-60 wow fadeInLeft"
-              data-wow-delay=".2s"
-            >
-              <a href="index.html" class="mb-30 w-25">
-                <img
-                  src="assets/img/logo/maxi-logo.png"
-                  alt="MaxiDove Logo"
-                  class="footer-logo"
-                />
-              </a>
-              <p class="mb-30 footer-desc">
-                MaxiDove helps businesses grow through strategic digital
-                marketing solutions. We're passionate about creating measurable
-                results that impact your bottom line.
-              </p>
-            </div>
-          </div>
-          <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6">
-            <div class="footer-widget mb-60 wow fadeInUp" data-wow-delay=".4s">
-              <h4>Quick Links</h4>
-              <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About Us</a></li>
-                <li><a href="index.html#service">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-3 col-md-6">
-            <div class="footer-widget mb-60 wow fadeInUp" data-wow-delay=".6s">
-              <h4>Services</h4>
-              <ul class="footer-links">
-                <li>
-                  <a href="index.html#service">Search Engine Optimization</a>
-                </li>
-                <li><a href="index.html#services">Paid Advertising</a></li>
-                <li>
-                  <a href="index.html#service">Web Design & Development</a>
-                </li>
-                <li><a href="index.html#service">Social Media Marketing</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-3 col-md-6">
-            <div
-              class="footer-widget mb-60 wow fadeInRight"
-              data-wow-delay=".8s"
-            >
-              <h4>Contact Us</h4>
-              <ul class="footer-contact">
-                <li>
-                  <p><i class="lni lni-phone"></i> +234 (0)8139962835</p>
-                </li>
-                <li>
-                  <p>
-                    <i class="lni lni-envelope"></i>
-                    maxidoveconversion@gmail.com
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="copyright-area">
-          <div class="row align-items-center">
-            <div class="col-md-6">
-              <div class="footer-social-links">
-                <ul class="d-flex">
-                  <li>
-                    <a href="https://www.instagram.com/maxidove_conv?igsh=OTFpM3c4M2VtcWh4&utm_source=qr"><i class="lni lni-instagram-filled"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <p class="wow fadeInUp" data-wow-delay=".3s">
-                © 2025 MaxiDove. All Rights Reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- ========================= footer end ========================= -->
+  <script src="assets/js/bootstrap.bundle-5.0.0-beta1.min.js"></script>
+  <script>
+    window.addEventListener('load', () => { setTimeout(() => document.getElementById('preloader').classList.add('hide'), 600); });
+    window.addEventListener('scroll', () => document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 80));
 
-    <!-- ========================= scroll-top ========================= -->
-    <a href="#" class="scroll-top">
-      <i class="lni lni-arrow-up"></i>
-    </a>
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+    setTimeout(() => document.querySelectorAll('.fade-up').forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible'); }), 400);
 
-    <!-- ========================= JS here ========================= -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="assets/js/bootstrap.bundle-5.0.0-beta1.min.js"></script>
-    <script src="assets/js/contact-form.js"></script>
-    <script src="assets/js/count-up.min.js"></script>
-    <script src="assets/js/tiny-slider.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-      // Portfolio data
-      const portfolioData = {
-        "web-design": [
-          {
-            title: "Traveling Website",
-            src: "./assets/img/portfolio/web design/shopify (1).jpeg",
-            index: 0,
-          },
-          {
-            title: "Modern Web Interface",
-            src: "./assets/img/portfolio/web design/shopify (2).jpeg",
-            index: 1,
-          },
-          {
-            title: "E-commerce Solution",
-            src: "./assets/img/portfolio/web design/shopify (3).jpeg",
-            index: 2,
-          },
-          {
-            title: "Creative Landing Page",
-            src: "./assets/img/portfolio/web design/shopify (4).jpeg",
-            index: 3,
-          },
-          {
-            title: "Portfolio Website",
-            src: "./assets/img/portfolio/web design/shopify (5).jpeg",
-            index: 4,
-          },
-          {
-            title: "Business Dashboard",
-            src: "./assets/img/portfolio/web design/shopify (6).jpeg",
-            index: 5,
-          },
-          {
-            title: "Online Storefront",
-            src: "./assets/img/portfolio/web design/shopify (7).jpeg",
-            index: 6,
-          },
-          {
-            title: "Minimalist Website",
-            src: "./assets/img/portfolio/web design/shopify (8).jpeg",
-            index: 7,
-          },
-          {
-            title: "Interactive Web App",
-            src: "./assets/img/portfolio/web design/shopify (9).jpeg",
-            index: 8,
-          },
-          {
-            title: "Corporate Website",
-            src: "./assets/img/portfolio/web design/shopify (10).jpeg",
-            index: 9,
-          },
-          {
-            title: "Startup Landing",
-            src: "./assets/img/portfolio/web design/shopify (11).jpeg",
-            index: 10,
-          },
-          {
-            title: "Blog Platform",
-            src: "./assets/img/portfolio/web design/shopify (12).jpeg",
-            index: 11,
-          },
-          {
-            title: "E-learning Portal",
-            src: "./assets/img/portfolio/web design/shopify (13).jpeg",
-            index: 12,
-          },
-        ],
-        sales: [
-          {
-            title: "Shopify Sales Campaign",
-            src: "./assets/img/portfolio/sales/sales (1).jpeg",
-            index: 0,
-          },
-          {
-            title: "Product Marketing",
-            src: "./assets/img/portfolio/sales/sales (2).jpeg",
-            index: 1,
-          },
-          {
-            title: "E-commerce Store Optimization",
-            src: "./assets/img/portfolio/sales/sales (3).jpeg",
-            index: 2,
-          },
-          {
-            title: "Seasonal Promotion",
-            src: "./assets/img/portfolio/sales/sales (4).jpeg",
-            index: 3,
-          },
-          {
-            title: "Flash Sale Campaign",
-            src: "./assets/img/portfolio/sales/sales (5).jpeg",
-            index: 4,
-          },
-          {
-            title: "Product Launch",
-            src: "./assets/img/portfolio/sales/sales (6).jpeg",
-            index: 5,
-          },
-          {
-            title: "Email Marketing",
-            src: "./assets/img/portfolio/sales/sales (7).jpeg",
-            index: 6,
-          },
-          {
-            title: "Social Media Ads",
-            src: "./assets/img/portfolio/sales/sales (8).jpeg",
-            index: 7,
-          },
-          {
-            title: "Affiliate Campaign",
-            src: "./assets/img/portfolio/sales/sales (9).jpeg",
-            index: 8,
-          },
-          {
-            title: "Retargeting Ads",
-            src: "./assets/img/portfolio/sales/sales (10).jpeg",
-            index: 9,
-          },
-          {
-            title: "Holiday Sales",
-            src: "./assets/img/portfolio/sales/sales (11).jpeg",
-            index: 10,
-          },
-          {
-            title: "Loyalty Program",
-            src: "./assets/img/portfolio/sales/sales (12).jpeg",
-            index: 11,
-          },
-          {
-            title: "Influencer Marketing",
-            src: "./assets/img/portfolio/sales/sales (13).jpeg",
-            index: 12,
-          },
-        ],
-        graphic: [
-          {
-            title: "Brand Identity Design",
-            src: "./assets/img/portfolio/logo/logo (1).jpeg",
-            index: 0,
-          },
-          {
-            title: "Logo Collection",
-            src: "./assets/img/portfolio/logo/logo (2).jpeg",
-            index: 1,
-          },
-          {
-            title: "Corporate Branding",
-            src: "./assets/img/portfolio/logo/logo (3).jpeg",
-            index: 2,
-          },
-          {
-            title: "Product Packaging",
-            src: "./assets/img/portfolio/logo/logo (4).jpeg",
-            index: 3,
-          },
-          {
-            title: "Social Media Graphics",
-            src: "./assets/img/portfolio/logo/logo (5).jpeg",
-            index: 4,
-          },
-          {
-            title: "Poster Design",
-            src: "./assets/img/portfolio/logo/logo (6).jpeg",
-            index: 5,
-          },
-          {
-            title: "Brochure Layout",
-            src: "./assets/img/portfolio/logo/logo (7).jpeg",
-            index: 6,
-          },
-          {
-            title: "Infographic Design",
-            src: "./assets/img/portfolio/logo/logo (8).jpeg",
-            index: 7,
-          },
-          {
-            title: "Business Card",
-            src: "./assets/img/portfolio/logo/logo (9).jpeg",
-            index: 8,
-          },
-          {
-            title: "Event Branding",
-            src: "./assets/img/portfolio/logo/logo (10).jpeg",
-            index: 9,
-          },
-          {
-            title: "Digital Banner",
-            src: "./assets/img/portfolio/logo/logo (11).jpeg",
-            index: 10,
-          },
-          {
-            title: "Flyer Design",
-            src: "./assets/img/portfolio/logo/logo (12).jpeg",
-            index: 11,
-          },
-          {
-            title: "Menu Design",
-            src: "./assets/img/portfolio/logo/logo (13).jpeg",
-            index: 12,
-          },
-        ],
-      };
-
-      // Shuffle function to randomize array
-      function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-      }
-
-      // Generate portfolio items for a specific page and filter
-      function generatePortfolioItems(filter, page) {
-        const grid = document.querySelector("#portfolio-grid");
-        grid.innerHTML = "";
-        const itemsPerPage = 6;
-        let items = [];
-
-        // Collect items based on filter
-        if (filter === "*") {
-          Object.keys(portfolioData).forEach((category) => {
-            portfolioData[category].forEach((item) => {
-              items.push({ ...item, category });
-            });
-          });
-          items = shuffleArray(items);
-        } else {
-          items = shuffleArray([...portfolioData[filter]]).map((item) => ({
-            ...item,
-            category: filter,
-          }));
-        }
-
-        // Calculate pagination
-        const totalItems = items.length;
-        const totalPages = Math.ceil(totalItems / itemsPerPage);
-        const start = (page - 1) * itemsPerPage;
-        const end = start + itemsPerPage;
-
-        // Render items for the current page
-        items.slice(start, end).forEach((item) => {
-          const div = document.createElement("div");
-          div.className = `col-lg-4 col-md-6 portfolio-item-wrapper ${item.category}`;
-          div.innerHTML = `
-                    <div class="portfolio-item fade-in-item">
-                        <div class="portfolio-img">
-                            <img src="${item.src}" alt="${
-            item.title
-          }" class="portfolio-thumbnail">
-                            <div class="portfolio-overlay">
-                                <div class="portfolio-content">
-                                    <h4>${item.title}</h4>
-                                    <p>${item.category
-                                      .replace("-", " ")
-                                      .replace(/\b\w/g, (l) =>
-                                        l.toUpperCase()
-                                      )}</p>
-                                    <div class="portfolio-action-btns">
-                                        <a href="#" class="portfolio-action-btn open-modal" data-category="${
-                                          item.category
-                                        }" data-index="${
-            item.index
-          }"><i class="lni lni-search-alt"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-          grid.appendChild(div);
+    // Filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.case-card').forEach(card => {
+          const show = filter === 'all' || card.dataset.sector === filter;
+          card.style.display = show ? 'flex' : 'none';
         });
-
-        // Update pagination
-        updatePagination(totalPages, page);
-
-        // Reinitialize Isotope
-        imagesLoaded(grid, function () {
-          new Isotope(grid, {
-            itemSelector: ".portfolio-item-wrapper",
-            layoutMode: "fitRows",
-            transitionDuration: "0.4s",
-          });
-        });
-      }
-
-      // Update pagination controls
-      function updatePagination(totalPages, currentPage) {
-        const pagination = document.querySelector("#pagination");
-        pagination.innerHTML = "";
-
-        if (totalPages <= 1) return;
-
-        // Previous button
-        const prevLi = document.createElement("li");
-        prevLi.className = "page-item" + (currentPage === 1 ? " disabled" : "");
-        prevLi.innerHTML = `<a class="page-link" href="#"><i class="lni lni-chevron-left"></i></a>`;
-        pagination.appendChild(prevLi);
-
-        // Page numbers
-        for (let i = 1; i <= totalPages; i++) {
-          const li = document.createElement("li");
-          li.className = "page-item" + (i === currentPage ? " active" : "");
-          li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
-          pagination.appendChild(li);
-        }
-
-        // Next button
-        const nextLi = document.createElement("li");
-        nextLi.className =
-          "page-item" + (currentPage === totalPages ? " disabled" : "");
-        nextLi.innerHTML = `<a class="page-link" href="#"><i class="lni lni-chevron-right"></i></a>`;
-        pagination.appendChild(nextLi);
-      }
-
-      // Initialize modal slider
-      function initializeModalSlider(category, startIndex) {
-        const slider = document.querySelector("#portfolioSlider");
-        const nav = document.querySelector("#portfolioSliderNav");
-        slider.innerHTML = "";
-        nav.innerHTML = "";
-
-        // Ensure slider is not initialized
-        if ($(slider).hasClass("slick-initialized")) {
-          $(slider).slick("unslick");
-        }
-        if ($(nav).hasClass("slick-initialized")) {
-          $(nav).slick("unslick");
-        }
-
-        // Populate slider and navigation
-        portfolioData[category].forEach((item) => {
-          slider.innerHTML += `
-                    <div class="portfolio-slider-item">
-                        <img src="${item.src}" alt="${
-            item.title
-          }" onerror="this.src='./assets/img/placeholder.jpg';">
-                        <div class="portfolio-slider-info">
-                            <h3 class="portfolio-slider-title">${
-                              item.title
-                            }</h3>
-                            <p class="portfolio-slider-category">${category
-                              .replace("-", " ")
-                              .replace(/\b\w/g, (l) => l.toUpperCase())}</p>
-                        </div>
-                    </div>
-                `;
-          nav.innerHTML += `
-                    <div class="slider-nav-item">
-                        <img src="${item.src}" alt="${item.title}" onerror="this.src='./assets/img/placeholder.jpg';">
-                    </div>
-                `;
-        });
-
-        // Wait for images to load before initializing sliders
-        imagesLoaded(slider, function () {
-          try {
-            $(slider).slick({
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              arrows: true,
-              fade: true,
-              asNavFor: "#portfolioSliderNav",
-              initialSlide: startIndex,
-              adaptiveHeight: true,
-            });
-
-            $(nav).slick({
-              slidesToShow: 5,
-              slidesToScroll: 1,
-              asNavFor: "#portfolioSlider",
-              dots: false,
-              centerMode: true,
-              focusOnSelect: true,
-              arrows: false,
-              responsive: [
-                { breakpoint: 768, settings: { slidesToShow: 3 } },
-                { breakpoint: 480, settings: { slidesToShow: 2 } },
-              ],
-            });
-
-            // // Debug: Confirm slider initialization
-            // console.log('Slider initialized for category:', category, 'at index:', startIndex);
-          } catch (error) {
-            // console.error('Error initializing Slick Slider:', error);
-          }
-        });
-      }
-
-      // Debounce function
-      function debounce(func, wait) {
-        let timeout;
-        return function (...args) {
-          clearTimeout(timeout);
-          timeout = setTimeout(() => func.apply(this, args), wait);
-        };
-      }
-
-      // Main initialization
-      document.addEventListener("DOMContentLoaded", function () {
-        let currentFilter = "*";
-        let currentPage = 1;
-
-        // Initial render
-        generatePortfolioItems(currentFilter, currentPage);
-
-        const grid = document.querySelector("#portfolio-grid");
-        const modal = document.querySelector("#portfolioModal");
-        const closeBtn = document.querySelector(".portfolio-modal-close");
-        const loading = document.querySelector(".portfolio-loading");
-
-        // Filter buttons
-        const filterButtons = document.querySelectorAll(
-          ".portfolio-filter-btn"
-        );
-        filterButtons.forEach((button) => {
-          button.addEventListener(
-            "click",
-            debounce(function () {
-              filterButtons.forEach((btn) => btn.classList.remove("active"));
-              this.classList.add("active");
-              currentFilter = this.getAttribute("data-filter");
-              currentPage = 1;
-              generatePortfolioItems(currentFilter, currentPage);
-            }, 200)
-          );
-        });
-
-        // Pagination click handler
-        document.querySelector("#pagination").addEventListener("click", (e) => {
-          e.preventDefault();
-          const target = e.target.closest(".page-link");
-          if (!target) return;
-
-          const prev = target.querySelector(".lni-chevron-left");
-          const next = target.querySelector(".lni-chevron-right");
-          const pageNumber = parseInt(target.textContent);
-
-          if (prev && currentPage > 1) {
-            currentPage--;
-          } else if (
-            next &&
-            currentPage <
-              Math.ceil(
-                (currentFilter === "*"
-                  ? Object.values(portfolioData).flat().length
-                  : portfolioData[currentFilter.replace(".", "")].length) / 6
-              )
-          ) {
-            currentPage++;
-          } else if (!isNaN(pageNumber)) {
-            currentPage = pageNumber;
-          }
-
-          generatePortfolioItems(currentFilter, currentPage);
-        });
-
-        // Modal handling
-        grid.addEventListener("click", function (e) {
-          const btn = e.target.closest(".open-modal");
-          if (btn) {
-            e.preventDefault();
-            const category = btn.getAttribute("data-category");
-            const index = parseInt(btn.getAttribute("data-index"), 10);
-
-            // Reset modal state
-            modal.style.display = "block";
-            loading.style.display = "block";
-            document.querySelector("#portfolioSlider").innerHTML = "";
-            document.querySelector("#portfolioSliderNav").innerHTML = "";
-
-            // Initialize slider after a short delay to ensure DOM is ready
-            setTimeout(() => {
-              initializeModalSlider(category, index);
-              loading.style.display = "none";
-            }, 300);
-          }
-        });
-
-        // Close modal
-        function closeModal() {
-          modal.style.display = "none";
-          const slider = document.querySelector("#portfolioSlider");
-          const nav = document.querySelector("#portfolioSliderNav");
-          if ($(slider).hasClass("slick-initialized")) {
-            $(slider).slick("unslick");
-          }
-          if ($(nav).hasClass("slick-initialized")) {
-            $(nav).slick("unslick");
-          }
-          // // Debug: Confirm modal closed
-          // console.log('Modal closed');
-        }
-
-        closeBtn.addEventListener("click", closeModal);
-
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) {
-            closeModal();
-          }
-        });
-
-        // Initialize GLightbox
-        const lightbox = GLightbox({ selector: ".glightbox" });
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
