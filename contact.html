@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="assets/css/animate.css" />
   <link rel="stylesheet" href="assets/css/main.css" />
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <style>
     :root {
       --navy: #0d1f3c;
@@ -829,18 +831,18 @@
                   <input type="email" id="email" placeholder="john@yourcompany.com" required />
                 </div>
               </div>
-                <div class="form-group">
-                  <label for="service">Service Interested In *</label>
-                  <select id="service" required>
-                    <option value="" disabled selected>Select a service</option>
-                    <option>Federal Bid & Proposal Writing</option>
-                    <option>Federal Opportunity Search & Pipeline</option>
-                    <option>SAM.gov Registration & Strategy</option>
-                    <option>GSA Schedule Application</option>
-                    <option>Federal Contracting Consultation</option>
-                    <option>Post-Award & Debrief Support</option>
-                    <option>General Enquiry</option>
-                  </select>
+              <div class="form-group">
+                <label for="service">Service Interested In *</label>
+                <select id="service" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option>Federal Bid & Proposal Writing</option>
+                  <option>Federal Opportunity Search & Pipeline</option>
+                  <option>SAM.gov Registration & Strategy</option>
+                  <option>GSA Schedule Application</option>
+                  <option>Federal Contracting Consultation</option>
+                  <option>Post-Award & Debrief Support</option>
+                  <option>General Enquiry</option>
+                </select>
               </div>
               <div class="form-group">
                 <label for="company">Company / Organisation</label>
@@ -979,25 +981,45 @@
       });
     });
 
-    // Form
+    (function () {
+      emailjs.init({ publicKey: "O1hIOPXtDnUngx18a" });
+    })();
+
     document.getElementById('contact-form').addEventListener('submit', function (e) {
       e.preventDefault();
+
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const service = document.getElementById('service').value;
+      const company = document.getElementById('company').value.trim();
       const message = document.getElementById('message').value.trim();
+
       const res = document.getElementById('form-response');
+
+      // validation
       if (!name || !email || !service || !message) {
-        res.innerHTML = '<div class="alert-danger">Please fill in all required fields.</div>'; return;
+        res.innerHTML = '<div class="alert-danger">Please fill in all required fields.</div>';
+        return;
       }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        res.innerHTML = '<div class="alert-danger">Please enter a valid email address.</div>'; return;
-      }
+
       res.innerHTML = '<div style="padding:14px;font-size:14px;color:var(--text-muted)">Sending...</div>';
-      setTimeout(() => {
-        res.innerHTML = '<div class="alert-success">✓ Thank you! Your message has been sent. We\'ll be in touch within 24 hours.</div>';
-        this.reset();
-      }, 1200);
+
+      // EmailJS send
+      emailjs.send("service_6e4kuhd", "template_onwhiba", {
+        from_name: name,
+        from_email: email,
+        service: service,
+        company: company || "N/A",
+        message: message
+      })
+        .then(function () {
+          res.innerHTML = '<div class="alert-success">✓ Message sent successfully. We will respond within 24 hours.</div>';
+          document.getElementById('contact-form').reset();
+        })
+        .catch(function (error) {
+          console.error(error);
+          res.innerHTML = '<div class="alert-danger">Failed to send message. Please try again.</div>';
+        });
     });
   </script>
 </body>
