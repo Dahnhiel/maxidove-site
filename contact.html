@@ -827,8 +827,8 @@
                   <input type="text" id="name" placeholder="John Smith" required />
                 </div>
                 <div class="form-group">
-                  <label for="email">Email Address *</label>
-                  <input type="email" id="email" placeholder="john@yourcompany.com" required />
+                  <label for="senderEmail">Email Address *</label>
+                  <input type="email" id="senderEmail" placeholder="john@yourcompany.com" required />
                 </div>
               </div>
               <div class="form-group">
@@ -854,7 +854,7 @@
                   placeholder="Tell us about your business, target federal agencies, past performance, or specific opportunities you're interested in..."
                   required></textarea>
               </div>
-              <button type="submit" class="btn-submit">Send Message <i class="lni lni-arrow-right"></i></button>
+              <button type="submit" class="btn-submit">Send Message<i class="lni lni-arrow-right"></i></button>
               <p class="form-note">We treat all enquiries with complete confidentiality.</p>
               <div class="form-response" id="form-response"></div>
             </form>
@@ -989,36 +989,55 @@
       e.preventDefault();
 
       const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
+      const senderEmail = document.getElementById('senderEmail').value.trim();
       const service = document.getElementById('service').value;
       const company = document.getElementById('company').value.trim();
       const message = document.getElementById('message').value.trim();
 
       const res = document.getElementById('form-response');
+      const btn = document.querySelector('.btn-submit');
 
       // validation
-      if (!name || !email || !service || !message) {
+      if (!name || !senderEmail || !service || !message) {
         res.innerHTML = '<div class="alert-danger">Please fill in all required fields.</div>';
         return;
       }
 
-      res.innerHTML = '<div style="padding:14px;font-size:14px;color:var(--text-muted)">Sending...</div>';
+      // show loading state on button
+      btn.disabled = true;
+      btn.innerHTML = 'Sending...';
 
-      // EmailJS send
       emailjs.send("service_6e4kuhd", "template_onwhiba", {
         from_name: name,
-        from_email: email,
+        from_email: senderEmail,
         service: service,
         company: company || "N/A",
         message: message
       })
         .then(function () {
-          res.innerHTML = '<div class="alert-success">✓ Message sent successfully. We will respond within 24 hours.</div>';
+          btn.innerHTML = 'Message Sent Successfully <i class="lni lni-checkmark"></i>';
+          btn.style.background = '#198754'; // success green
+
           document.getElementById('contact-form').reset();
+
+          // reset button after a few seconds
+          setTimeout(() => {
+            btn.disabled = false;
+            btn.innerHTML = 'Send Message <i class="lni lni-arrow-right"></i>';
+            btn.style.background = '';
+          }, 4000);
         })
         .catch(function (error) {
           console.error(error);
-          res.innerHTML = '<div class="alert-danger">Failed to send message. Please try again.</div>';
+
+          btn.innerHTML = 'Failed. Try again';
+          btn.style.background = '#dc3545'; // error red
+
+          setTimeout(() => {
+            btn.disabled = false;
+            btn.innerHTML = 'Send Message <i class="lni lni-arrow-right"></i>';
+            btn.style.background = '';
+          }, 3000);
         });
     });
   </script>
